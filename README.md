@@ -5,6 +5,14 @@ descritption from Niclas Bergman's Thesis [Recursive Bayesian Estimation
 Navigation and Tracking Applications](http://www.control.isy.liu.se/research/reports/Ph.D.Thesis/PhD579.pdf), Chapter 5. Both implemenations relay on [N-dimensional sparse arrays
 ](http://ch.mathworks.com/matlabcentral/fileexchange/29832-n-dimensional-sparse-arrays) which is included in this distribution.
 
+## Installation 
+
+In your matlab Command Window make sure you are outside the
+
+```matlab
+>>> addpath(genpath('./point-mass-filter'))
+```
+
 ## 2D PMF
 
 The folder [PMF_2D](https://github.com/gpldecha/point-mass-filter/tree/master/PMF_2D) contains two examples of how to use the  2D PMF filter. 
