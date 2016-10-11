@@ -1,4 +1,4 @@
-%% Point Mass Filter 2D example 
+%% Point Mass Filter 2D Example 1 
 
 clear all;
 
@@ -71,7 +71,7 @@ ylim([-15 15]);
 xlabel('x-axis');
 ylabel('y-axis');
 box on;
-
+axis equal;
 
 % Plot agent, wall and [likelihood]
 
@@ -91,7 +91,7 @@ ylim([-15 15]);
 xlabel('x-axis');
 ylabel('y-axis');
 box on;
-
+axis equal;
 
 %% Simulation loop
 

@@ -21,9 +21,23 @@ function [handle] = plot_pmf(axis_handle,pmf,handle_in,pmf_plot_options)
 %% Process Input values
 
 if ~exist('pmf_plot_options','var')
-   pmf_plot_options.plot_type    = 'scatter';
-   pmf_plot_options.colormap     = generate_colormap(256,1);
+   pmf_plot_options.plot_type           = 'scatter';
+   pmf_plot_options.colormap            = generate_colormap(256,1);
 end
+
+if isempty(pmf_plot_options)
+   pmf_plot_options.plot_type           = 'scatter';
+   pmf_plot_options.colormap            = generate_colormap(256,1);  
+end
+
+if ~isfield(pmf_plot_options,'colormap')
+    pmf_plot_options.colormap           = generate_colormap(256,1);  
+end
+
+if ~isfield(pmf_plot_options,'plot_type')
+    pmf_plot_options.plot_type          = 'scatter';
+end
+
 
 plot_type    = pmf_plot_options.plot_type;
 color_map    = pmf_plot_options.colormap;
@@ -59,8 +73,8 @@ if(isempty(handle_in))
         handle = scatter(axis_handle,xi(:),yi(:),15,zi(:),'filled');
     elseif strcmp(plot_type,'pcolor')
         handle  = pcolor(axis_handle,xi,yi,zi); shading interp;
-    elseif strcmp(pmf_plot_options,'contourf')
-        [~,handle] = contourf(axis_handle,xi,yi,zi,5);
+    elseif strcmp(plot_type,'contourf')
+        [~,handle] = contourf(axis_handle,xi,yi,zi);
     else
        error(['no such plot options: ' plot_type]); 
     end

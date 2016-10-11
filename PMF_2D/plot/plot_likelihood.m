@@ -23,8 +23,12 @@ xs      = linspace(-12,12,60);
 
 pos    = [x(:),y(:)];
 
+if ~isempty(agent_orient)
+    hY      =  hy_func(pos,agent_orient);
+else
+    hY      =  hy_func(pos);
+end
 
-hY      =  hy_func(pos,agent_orient);
 L       =  lik_func(Y,hY);
 
 
