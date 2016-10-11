@@ -2,7 +2,7 @@
 Matlab implementation of a Point Mass Filter (PMF)
 
 
-![alt-text-1](./docs/pmf_2D_example1.png =250x) ![alt-text-2](./docs/likelihood.png =250x)3'
+![](./docs/pmf_2D_example1.png  =100x20) ![](./docs/likelihood.png  =100x20)
 
 
 
