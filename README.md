@@ -7,7 +7,7 @@ Navigation and Tracking Applications](http://www.control.isy.liu.se/research/rep
 
 ## 2D PMF
 
- The folder [PMF_2D](https://github.com/gpldecha/point-mass-filter/tree/master/PMF_2D) contains two examples of how to use the  2D PMF filter. In the first example (see Example1.m) an agent (orange packman) follows a circular motion whilst measuring distance and bearing (red line) to a wall (black line), see both the illustrations below: 
+ The folder [PMF_2D](https://github.com/gpldecha/point-mass-filter/tree/master/PMF_2D) contains two examples of how to use the  2D PMF filter. In the first example (run script [Example1.m](https://github.com/gpldecha/point-mass-filter/blob/master/PMF_2D/Example1.m)) an agent (orange packman) follows a circular motion whilst measuring distance and bearing (red line) to a wall (black line), see both the illustrations below: 
 
 <img src="./docs/pmf_2D_example1.png" alt="Example1_pmf" height="350" >
 <img src="./docs/likelihood.png"      alt="Example1_lik" height="350">
