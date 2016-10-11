@@ -31,5 +31,5 @@ Run script [Example1.m](https://github.com/gpldecha/point-mass-filter/blob/maste
 The folder [PMF_3D](https://github.com/gpldecha/point-mass-filter/tree/master/PMF_2D) contains one example of how to use the filter. If you run [Example3.m](https://github.com/gpldecha/point-mass-filter/blob/master/PMF_3D/Example3.m) you should see something similar to the figure below. 
 
 <center>
-<img src="./docs/search_1_side.gif" alt="Example3" height="400" align="middle">
+<img src="./docs/search_1_side.gif" alt="Example3" height="400">
 </center>
