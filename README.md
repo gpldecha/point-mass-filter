@@ -5,9 +5,6 @@ Matlab implementation of a Point Mass Filter (PMF)
 <img src="./docs/likelihood.png" alt="Smiley face" height="350">
 
 
+<img src="./docs/blue_search.gif"  alt="Smiley face" height="400" align="middle">
 
-
-![2D PMF](./docs/blue_search.gif)
-
-
-![3D_PMF](./docs/search_1_side.gif)
+<img src="./docs/search_1_side.png" alt="Smiley face" height="400" align="middle">
