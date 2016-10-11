@@ -1,8 +1,9 @@
 # point-mass-filter
 Matlab implementation of a Point Mass Filter (PMF)
 
+<img src="./docs/pmf_2D_example1.png" alt="Smiley face" height="42" width="42">
+<img src="./docs/likelihood.png" alt="Smiley face" height="42" width="42">
 
-![](./docs/pmf_2D_example1.png  =100x20) ![](./docs/likelihood.png  =100x20)
 
 
 
