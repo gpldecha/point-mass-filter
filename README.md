@@ -1,7 +1,8 @@
 # point-mass-filter
 
 Matlab implementation of a Point Mass Filter (PMF). This implementation is based on the 
-descritption given in [1](http://www.control.isy.liu.se/research/reports/Ph.D.Thesis/PhD579.pdf), Chapter 5.
+descritption from Niclas Bergman's Thesis [Recursive Bayesian Estimation
+Navigation and Tracking Applications](http://www.control.isy.liu.se/research/reports/Ph.D.Thesis/PhD579.pdf), Chapter 5.
 
 <img src="./docs/pmf_2D_example1.png" alt="Example1_pmf" height="350" >
 <img src="./docs/likelihood.png"      alt="Example1_lik" height="350">
