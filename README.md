@@ -2,5 +2,7 @@
 Matlab implementation of a Point Mass Filter (PMF)
 
 
-![alt tag](./docs/blue_search.gif)
-fadf
+![2D PMF](./docs/blue_search.gif)
+
+
+![3D_PMF](./docs/search_1_side.gif)
