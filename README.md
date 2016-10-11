@@ -20,11 +20,15 @@ You should see both figures illustrated below after runing the scripts.
 
 ### Example 2
 
+Run script [Example1.m](https://github.com/gpldecha/point-mass-filter/blob/master/PMF_2D/Example1.m) and you should see the figure below appear. To control the agent use your arrow keys and press Esc to exit the simulation loop.
+
 <center>
 <img src="./docs/blue_search.gif"  alt="Example2" height="400" align="middle">
 </center>
 
 ## 3D PMF
+
+The folder [PMF_3D](https://github.com/gpldecha/point-mass-filter/tree/master/PMF_2D) contains one example of how to use the filter. If you run [Example3](https://github.com/gpldecha/point-mass-filter/blob/master/PMF_3D/Example3.m) you should see something similar to the figure below. 
 
 <center>
 <img src="./docs/search_1_side.gif" alt="Example3" height="400" align="middle">
