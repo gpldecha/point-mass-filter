@@ -2,7 +2,7 @@
 
 Matlab implementation of a 2D and 3D Point Mass Filter (PMF). This implementation is based on the 
 descritption from Niclas Bergman's Thesis: [Recursive Bayesian Estimation
-Navigation and Tracking Applications](http://www.control.isy.liu.se/research/reports/Ph.D.Thesis/PhD579.pdf), Chapter 5. Both implemenations relay on [N-dimensional sparse arrays
+Navigation and Tracking Applications](http://www.control.isy.liu.se/research/reports/Ph.D.Thesis/PhD579.pdf), Chapter 5. Both implemenations rely on [N-dimensional sparse arrays
 ](http://ch.mathworks.com/matlabcentral/fileexchange/29832-n-dimensional-sparse-arrays) which is included in this distribution.
 
 ## Installation 
