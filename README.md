@@ -7,7 +7,7 @@ Navigation and Tracking Applications](http://www.control.isy.liu.se/research/rep
 
 ## Installation 
 
-In your matlab Command Window make sure you are outside the
+In your matlab Command Window make sure you are outside the point-mass-filter directory and run:
 
 ```matlab
 >>> addpath(genpath('./point-mass-filter'))
