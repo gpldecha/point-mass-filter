@@ -39,7 +39,7 @@ x3 = radius * heading(2)  + x1(2);
 h_x = [x2,x3];
 
 
-if isempty(hp)
+if isempty(hp) || ~isobject(hp(1))
     
     if ~exist(color,'var'), color = [1,0.7294,0];end
     
@@ -51,14 +51,16 @@ if isempty(hp)
     hp(1) = fill(X,Y,color);
     
     axes(hax);
-   hp(2) = plot([x1(1),h_x(1)],[x1(2),h_x(2)],'-k','LineWidth',3);
-   %hp(3) = plot(l2(1,:),l2(2,:),'-r','LineWidth',3);
+    hp(2) = plot([x1(1),h_x(1)],[x1(2),h_x(2)],'-k','LineWidth',3);
     
     hold off;
     
 else
     set(hp(1),'XData',X,'YData',Y);
     set(hp(2),'XData',[x1(1),h_x(1)],'YData',[x1(2),h_x(2)]);
+    uistack(hp(1), 'top');
+    uistack(hp(2), 'top');
+
   %  set(hp(3),'XData',l2(1,:),'YData',l2(2,:));
 
 end

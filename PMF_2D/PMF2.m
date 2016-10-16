@@ -170,7 +170,7 @@ classdef PMF2 < handle
             disp(' Motion parameters');
             disp(' ');
             disp(['   motion_noise:      ' num2str(obj.motion_noise)]);
-            disp(['   kernel_size:       ' num2str(obj.motion_kernel_size)]);
+            disp(['   kernel_size:       ' num2str(obj.kernel_size)]);
             disp(['   dist_travelled:    ' num2str(obj.dist_travelled)]);
             disp(['   theta_dist_travel: ' num2str(obj.theta_dist_travel)]);
             

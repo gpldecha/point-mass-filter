@@ -14,19 +14,18 @@ range_var                           = (1)^2;
 sensor_noise                        = (1).^2;
 agent_sensor_f                      = @(pos,rot)square_world_measurement_function(pos,rot,world,range_var);
 
-
 %% Initialise Point Mass Filter
 
 pmf_options.No                      = 800;
 pmf_options.N1                      = 5000;
 pmf_options.eps                     = 0.001;
-pmf_options.delta                   = 1;
+pmf_options.delta                   = 0.5;
 pmf_options.m                       = floor(24/pmf_options.delta);
 pmf_options.n                       = floor(24/pmf_options.delta);
 pmf_options.ref                     = [0 0];
 
 pmf_options.motion_noise            = (0.9).^2;
-pmf_options.kernel_size             = 3;
+pmf_options.kernel_size             = 7;
 pmf_options.theta_dist_travel       = 3;
 
 pmf_options.initialisation_f        = @(pmf)initialise_pmf2_square(pmf);
@@ -37,14 +36,13 @@ pmf_obj                             = PMF2(pmf_options);
 
 
 % Plot
-bDiscrete                           = false;
 options.pmf_obj                     = pmf_obj;
 options.x                           = agent_position;
 options.agent_orient                = agent_orient;
 options.agent_radius                = agent_radius;
 options.Y                           = agent_sensor_f(agent_position,[]);
 options.XYW                         = get_pdf_pmf2(pmf_obj.pmf);
-options.bDiscrete                   = bDiscrete;
+options.pmf_plot_options.bDiscrete  = true;
 options.pmf_plot_options.plot_type  = 'contourf';
 
 close all;
@@ -110,21 +108,9 @@ while(bRunSim)
     pmf_obj.measurement_update(Y,[]);
     
     
-    
-    if bDiscrete
-        XYW     = get_pdf_pmf2(pmf_obj.pmf);
-        W       = disc_beliefs(XYW,grid_pts,delta_x);
-        XYW     = [grid_pts,W];
-        H_y     = sum(-(W(W>0).*(log2(W(W>0)))));
-    else
-        XYW     = [];
-    end
-
-    
-    options.XYW         = XYW;
     options.x           = xp;
     options.agent_orient = u./norm(u);
-    plot_2d_world_bel(options,handles);
+    handles = plot_2d_world_bel(options,handles);
     
     if(it >= 100),bRunSim = false; end
     if flag, bRunSim = false;      end

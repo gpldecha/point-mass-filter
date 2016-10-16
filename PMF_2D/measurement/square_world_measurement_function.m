@@ -20,8 +20,6 @@ function Y = square_world_measurement_function(X,rot,world,range_var,noise_cov)
 
 dist_outer =  distance2walls(X,world,'outer');
 dist_inner =  distance2walls(X,world,'innter');
-
-
 dist_wall = min([dist_outer,dist_inner],[],2);
 
 if exist('noise_cov','var')

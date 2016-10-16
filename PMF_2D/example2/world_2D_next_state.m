@@ -30,22 +30,22 @@ xp = x + repmat(u,N,1);
 
 idx = find(xp(:,1) > 11);
 if ~isempty(idx)
-    xp(idx,1) = 10;
+    xp(idx,1) = x(idx,1);
 end
 
 idx = find(xp(:,1) < -11);
 if ~isempty(idx)
-    xp(idx,1) = -10;
+    xp(idx,1) = x(idx,1);
 end
 
 idx = find(xp(:,2) > 11);
 if ~isempty(idx)
-    xp(idx,2) = 10;
+    xp(idx,2) = x(idx,2);
 end
 
 idx = find(xp(:,2) < -11);
 if ~isempty(idx)
-    xp(idx,2) = -10;
+    xp(idx,2) = x(idx,2);
 end
 
 end
