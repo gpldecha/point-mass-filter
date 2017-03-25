@@ -8,7 +8,7 @@ function [handles] = plot_2d_world_bel(options,handles,hp)
 if ~isfield(options,'bPlotAgent'),           options.bPlotAgent              = true;        end
 if ~isfield(options,'pmf_plot_options'),     options.pmf_plot_options        =  [];         end
 
-if ~isfield(options.pmf_plot_options,'bDiscrete'), options.pmf_plot_options.bDiscrete = false; end 
+%if ~isfield(options.pmf_plot_options,'bDiscrete'), options.pmf_plot_options.bDiscrete = false; end 
 
 
 
@@ -20,7 +20,7 @@ agent_orient        = options.agent_orient;
 agent_radius        = options.agent_radius;
 bPlotAgent          = options.bPlotAgent;
 pmf_plot_options    = options.pmf_plot_options;
-bDiscrete           = options.pmf_plot_options.bDiscrete;
+%bDiscrete           = options.pmf_plot_options.bDiscrete;
 
 %% Plot
 
@@ -40,12 +40,11 @@ if isempty(handles)
     
     % ---- Plot Agent --- %
     if bPlotAgent
-        h_a        = plot_round_agent(gca,x,agent_orient,agent_radius,[],[],bDiscrete);
+        h_a             = plot_round_agent(gca,x,agent_orient,agent_radius,[],[]);
     else
         h_a        = [];
     end
     hold on;
-    
     
     % ---- Plot Wolrd --- %
     rectangle('Position',[-10 -10 20 20]);
@@ -71,21 +70,21 @@ else
     plot_pmf(gca1,pmf_obj.pmf,pmf_h,pmf_plot_options);
     
     if bPlotAgent
-        plot_round_agent(gca1,x,agent_orient,agent_radius,[],h_a,bDiscrete);
+        plot_round_agent(gca1,x,agent_orient,agent_radius,[],h_a);
     end
     
-    if bDiscrete
-        
-        rectangle('Position',[-10 -10 20 20]);
-        rectangle('Position',[-1 -1 2 2],'FaceColor',[1 0 0],'EdgeColor','k','LineWidth',2);
-        axis([-15 15 -15 15]);
-        axis square;
-        
-        handles.plot1.hf    = hf;
-        handles.plot1.h_a   = h_a;
-        handles.plot1.pmf_h = pmf_h;
-        
-    end
+%     if bDiscrete
+%         
+%         rectangle('Position',[-10 -10 20 20]);
+%         rectangle('Position',[-1 -1 2 2],'FaceColor',[1 0 0],'EdgeColor','k','LineWidth',2);
+%         axis([-15 15 -15 15]);
+%         axis square;
+%         
+%         handles.plot1.hf    = hf;
+%         handles.plot1.h_a   = h_a;
+%         handles.plot1.pmf_h = pmf_h;
+%         
+%     end
     
     
 end

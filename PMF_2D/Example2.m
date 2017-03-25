@@ -45,11 +45,11 @@ options.agent_orient                = agent_orient;
 options.agent_radius                = agent_radius;
 options.Y                           = agent_sensor_f(agent_position,[]);
 options.XYW                         = get_pdf_pmf2(pmf_obj.pmf);
-options.pmf_plot_options.bDiscrete  = true;
+%options.pmf_plot_options.bDiscrete  = true;
 options.pmf_plot_options.plot_type  = 'contourf';
 
 close all;
-if ~exist('hp','var'),
+if ~exist('hp','var')
     [handles]                       = plot_2d_world_bel(options,[],[]);
 else
     [handles]                       = plot_2d_world_bel(options,[],hp);
