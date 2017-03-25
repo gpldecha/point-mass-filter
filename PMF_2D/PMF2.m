@@ -183,20 +183,28 @@ classdef PMF2 < handle
         end
         
         %% Motion update (independent motion noise)
+        %% Algorithm 5.1 (page 95 of Recursive Bayesian Estimation Navigation and Tracking Applciations)
         
         function obj = motion_update(obj,u)
-         
+            
             obj.dist_travelled  = obj.dist_travelled + norm(u);
+            % 6. Move the grid \bar{x}_{t+1} = \bar{x}_t + u_t
             obj.pmf.x_ref       = obj.pmf.x_ref + u;
             bConvolve           = false;
             
-                
+             %  P_{t+1|t} <- P_{t|t} : convovle the discrete probability
+             %  distribution with a gaussian kernel.
+             %  the convoultion only happens after a certain distance. This
+             %  is for computational reasones.
             if obj.dist_travelled >= obj.theta_dist_travel
                 obj.pmf.P       = convn(obj.kernel,obj.kernel,obj.pmf.P,'same');
                 bConvolve       = true;
             end 
             
+            % make sure the discrete probability distribution is normalised
             obj.pmf.P           = obj.pmf.P ./ sum(obj.pmf.P(:));
+            
+            % 4. Truncate all weights that are less than epsilon
             obj.pmf             = pmf_truncation(obj.pmf);
             
             if bConvolve
@@ -207,7 +215,6 @@ classdef PMF2 < handle
         
         
         %% Measurement update
-        
         function obj = measurement_update(obj,Y,rot)
             
             I               = find(obj.pmf.P ~= 0);
