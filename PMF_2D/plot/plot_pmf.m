@@ -38,6 +38,10 @@ if ~isfield(pmf_plot_options,'plot_type')
     pmf_plot_options.plot_type          = 'scatter';
 end
 
+if ~isfield(pmf_plot_options,'bDiscrete')
+    pmf_plot_options.bDiscrete          = false;
+end
+
 
 plot_type    = pmf_plot_options.plot_type;
 color_map    = pmf_plot_options.colormap;

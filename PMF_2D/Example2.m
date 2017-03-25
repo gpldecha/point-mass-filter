@@ -18,18 +18,21 @@ agent_sensor_f                      = @(pos,rot)square_world_measurement_functio
 
 pmf_options.No                      = 800;
 pmf_options.N1                      = 5000;
-pmf_options.eps                     = 0.001;
+pmf_options.eps                     = 0.00001;
 pmf_options.delta                   = 0.5;
 pmf_options.m                       = floor(24/pmf_options.delta);
 pmf_options.n                       = floor(24/pmf_options.delta);
 pmf_options.ref                     = [0 0];
 
-pmf_options.motion_noise            = (0.9).^2;
+pmf_options.motion_noise            = (0.8).^2;
 pmf_options.kernel_size             = 7;
-pmf_options.theta_dist_travel       = 3;
+pmf_options.theta_dist_travel       = 0.1;
 
 pmf_options.initialisation_f        = @(pmf)initialise_pmf2_square(pmf);
-pmf_options.likelihood_f            = @(Y,hY)pmf_gaussian_likelihood(Y,hY,sensor_noise);
+%pmf_options.likelihood_f            = @(Y,hY)pmf_gaussian_likelihood(Y,hY,sensor_noise);
+pmf_options.likelihood_f            = @(Y,hY)pmf_binary_likelihood(Y,hY);
+
+
 pmf_options.measurement_f           = @(pos,rot)square_world_measurement_function(pos,rot,world,range_var);
 
 pmf_obj                             = PMF2(pmf_options);
@@ -72,6 +75,7 @@ while(bRunSim)
     
     % ---------------------  Policy (human input) --------------------
     
+    u = [0,0];
     waitforbuttonpress;
     val=double(get(handles.plot1.hf,'CurrentCharacter'));
     if val == 29
@@ -112,10 +116,8 @@ while(bRunSim)
     options.agent_orient = u./norm(u);
     handles = plot_2d_world_bel(options,handles);
     
-    if(it >= 100),bRunSim = false; end
     if flag, bRunSim = false;      end
     x             = xp;
-    it            = it + 1;
 
     
 end

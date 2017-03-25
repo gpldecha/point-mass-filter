@@ -40,7 +40,7 @@ if isempty(handles)
     
     % ---- Plot Agent --- %
     if bPlotAgent
-        h_a        = plot_round_agent(gca,x,agent_orient,agent_radius,[],[]);
+        h_a        = plot_round_agent(gca,x,agent_orient,agent_radius,[],[],bDiscrete);
     else
         h_a        = [];
     end
@@ -71,7 +71,7 @@ else
     plot_pmf(gca1,pmf_obj.pmf,pmf_h,pmf_plot_options);
     
     if bPlotAgent
-        plot_round_agent(gca1,x,agent_orient,agent_radius,[],h_a);
+        plot_round_agent(gca1,x,agent_orient,agent_radius,[],h_a,bDiscrete);
     end
     
     if bDiscrete

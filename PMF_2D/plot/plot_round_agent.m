@@ -39,7 +39,7 @@ x3 = radius * heading(2)  + x1(2);
 h_x = [x2,x3];
 
 
-if isempty(hp) || ~isobject(hp(1))
+if isempty(hp) 
     
     if ~exist(color,'var'), color = [1,0.7294,0];end
     
