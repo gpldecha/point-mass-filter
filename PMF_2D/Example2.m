@@ -58,12 +58,11 @@ end
 
 %% Get handles; if you want to keep new figures in the same position after you closed them.
 
-
-disp('Running 2D box search Simulation');
-
-hp(1,:) = get(handles.hf(1),'Position');
-
+if exist('handles.hf','var')
+    hp(1,:) = get(handles.hf(1),'Position');
+end
 %% Simulation loop
+disp('Running 2D box search Simulation');
 
 
 bRunSim = true;
